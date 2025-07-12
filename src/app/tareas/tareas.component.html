@@ -1,0 +1,17 @@
+<div class="space-y-2">
+  <div *ngFor="let tarea of tareas; let i = index" 
+       class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+    <span class="flex-1 text-gray-800">{{ tarea }}</span>
+    <button 
+      (click)="eliminarTarea(i)"
+      class="ml-3 px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 transition-colors duration-200 font-medium"
+    >
+      Eliminar
+    </button>
+  </div>
+  
+  <div *ngIf="tareas.length === 0" class="text-center py-8 text-gray-500">
+    <div class="text-4xl mb-2"></div>
+    <p>No hay tareas aún. ¡Agrega tu primera tarea!</p>
+  </div>
+</div>
